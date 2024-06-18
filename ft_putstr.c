@@ -6,11 +6,11 @@
 /*   By: onouma <onouma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:44:14 by onouma            #+#    #+#             */
-/*   Updated: 2024/06/13 12:59:32 by onouma           ###   ########.fr       */
+/*   Updated: 2024/06/18 19:18:24 by onouma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_putstr(char *str)
 {
