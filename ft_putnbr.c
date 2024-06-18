@@ -6,7 +6,7 @@
 /*   By: onouma <onouma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:59:49 by onouma            #+#    #+#             */
-/*   Updated: 2024/06/18 19:33:46 by onouma           ###   ########.fr       */
+/*   Updated: 2024/06/18 20:00:01 by onouma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_base_len(char format)
 {
-	unsigned int	baselen;
-
 	if (format == 'd' || format == 'i' || format == 'u')
-		baselen = ft_strlen(BASE);
+		return (ft_strlen(BASE));
 	if (format == 'x')
-		baselen = ft_strlen(HEXBASE);
+		return (ft_strlen(HEXBASE));
 	if (format == 'X')
-		baselen = ft_strlen(HEXBASEMAJ);
-	return (baselen);
+		return (ft_strlen(HEXBASEMAJ));
+	return (0);
 }
 
 void	ft_putnbr(long n, char format)
@@ -30,8 +28,8 @@ void	ft_putnbr(long n, char format)
 	unsigned int	nbr;
 	unsigned long	max_uint;
 	unsigned int	len;
-	int				max_int;
-	int				min_int;	
+	unsigned int	max_int;
+	unsigned int	min_int;
 
 	max_int = 2147483647;
 	min_int = -2147483648;
@@ -49,18 +47,17 @@ void	ft_putnbr(long n, char format)
 		ft_putnbr(nbr / len, format);
 	if (format == 'x')
 		ft_putchr(HEXBASE[nbr % len]);
-	else if (format == 'X')
+	if (format == 'X')
 		ft_putchr(HEXBASEMAJ[nbr % len]);
-	else if ((format == 'd' || format == 'i') && (nbr <= max_int && nbr >= min_int))
+	if ((format == 'd' || format == 'i') && (n <= max_int && n >= min_int))
 		ft_putchr(BASE[nbr % len]);
 	else if (format == 'u' || format == 'x' || format == 'X')
 	{
 		nbr = nbr % max_uint;
 		ft_putchr(BASE[nbr % len]);
-	}	
+	}
 }
 
-#include "printf.h"
 #include <stdio.h>
 
 int	main(void)
