@@ -6,7 +6,7 @@
 /*   By: onouma <onouma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:00:29 by onouma            #+#    #+#             */
-/*   Updated: 2024/06/18 19:20:13 by onouma           ###   ########.fr       */
+/*   Updated: 2024/06/19 16:49:13 by onouma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
-void	ft_putchr(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(long n, char format);
-int		ft_base_len(char format);
+int	ft_putchr(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr_multi(unsigned int n, char format);
 size_t	ft_strlen(char *str);
+int	ft_putnbr(int n);
+int	ft_putptr(unsigned long long n);
+int		ft_printf(const char *, ...);
 #endif
